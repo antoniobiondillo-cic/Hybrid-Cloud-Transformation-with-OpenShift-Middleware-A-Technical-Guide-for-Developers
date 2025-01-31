@@ -22,7 +22,8 @@ OpenShift is a Kubernetes-based platform that enables consistent deployment and 
 Technical Example: Deploying a Multi-Container Application on OpenShift
 
 This example shows how to define a multi-container application deployment in OpenShift using YAML configuration. Here’s a sample configuration file for deploying a web application with a backend service:
-
+````
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -46,7 +47,8 @@ spec:
        image: myapp/backend:latest
        ports:
        - containerPort: 8080
-
+```
+````
 By configuring a multi-container deployment with services such as frontend and backend, developers can manage and scale each component separately within OpenShift, achieving flexibility across hybrid cloud environments.
 Middleware: Bridging Legacy and Cloud-Native Applications
 
@@ -59,7 +61,8 @@ Key Middleware Functions for Developers:
 Example: Integrating JBoss Middleware with OpenShift
 
 To create a hybrid setup, here’s an example of how to configure JBoss to handle message queuing in a hybrid cloud deployment. This configuration enables JBoss to route messages between a legacy system and a cloud-native application on OpenShift.
-
+````
+```
 <subsystem xmlns="urn:jboss:domain:messaging-activemq:1.0">
    <server name="default">
        <jms-queue name="IntegrationQueue">
@@ -67,7 +70,8 @@ To create a hybrid setup, here’s an example of how to configure JBoss to handl
        </jms-queue>
    </server>
 </subsystem>
-
+```
+````
 This XML snippet sets up a JMS queue named IntegrationQueue, allowing messages to be queued between components running in both legacy and cloud-native environments. This setup is crucial for applications that require reliable communication between disparate systems.
 Integrating OpenShift and Middleware for a Flexible Hybrid Cloud Solution
 
@@ -80,7 +84,8 @@ Combining OpenShift’s orchestration capabilities with middleware integration e
 Example: Automated Multi-Cloud Deployment with OpenShift and Middleware
 
 In this example, a developer uses OpenShift to deploy a service that integrates with a middleware application to handle data processing across multiple cloud environments. Here’s how to set up a basic CI/CD pipeline using OpenShift Pipelines (Tekton) to automate deployment:
-
+````
+```
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
@@ -105,7 +110,8 @@ spec:
      params:
        - name: SCRIPT
          value: "oc apply -f deployment.yaml"
-
+```
+````
 This Tekton pipeline automates source retrieval, container build, and deployment steps. Such pipelines are essential for DevOps practices in hybrid environments, enabling continuous deployment across OpenShift-managed clusters.
 Real-World Use Cases for Technical Practitioners
 
