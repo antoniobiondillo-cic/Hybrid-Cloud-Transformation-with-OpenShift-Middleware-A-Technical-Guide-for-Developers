@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-backend-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-backend
+  template:
+    metadata:
+      labels:
+        app: web-backend
+    spec:
+      containers:
+      - name: frontend
+        image: myapp/frontend:latest
+        ports:
+        - containerPort: 80
+      - name: backend
+        image: myapp/backend:latest
+        ports:
+        - containerPort: 8080

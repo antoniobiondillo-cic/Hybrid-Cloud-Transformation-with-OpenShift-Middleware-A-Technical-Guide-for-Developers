@@ -1,0 +1,7 @@
+<subsystem xmlns="urn:jboss:domain:messaging-activemq:1.0">
+    <server name="default">
+        <jms-queue name="IntegrationQueue">
+            <entry name="java:/jms/queue/IntegrationQueue"/>
+        </jms-queue>
+    </server>
+</subsystem>
